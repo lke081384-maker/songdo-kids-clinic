@@ -255,6 +255,10 @@ button, input, select, textarea { font: inherit; color: inherit; }
 
 .site-nav ul a { white-space: nowrap; }
 
+/* 다른 사이트로 나가는 메뉴: 강조색 + 새 창 아이콘 (소아과 사이트의 발달클리닉 링크와 같은 모양) */
+.site-nav a.nav-out { display: inline-flex; align-items: center; gap: 4px; color: var(--sea); }
+.nav-out svg { width: 15px; height: 15px; flex: none; }
+
 /* 메뉴가 9개라 넓은 화면에서도 머리말 전화번호는 넣지 않음. 전화번호는 오른쪽 아래 빠른 문의 버튼에 보임 */
 
 /* 태블릿 가로 폭: 메뉴가 두 줄로 꺾이지 않게 신청 버튼은 오른쪽 아래 빠른 문의 버튼에 맡김 */
@@ -1481,6 +1485,7 @@ button, input, select, textarea { font: inherit; color: inherit; }
   }
   .site-nav ul { flex-direction: column; gap: 0; }
   .site-nav ul a { padding: 14px 4px; border-radius: 0; border-bottom: 1px solid var(--line); font-size: 1.0625rem; }
+  .site-nav a.nav-out { display: flex; }
   .site-nav ul a:hover { background: none; color: var(--sea); }
   .nav-phone {
     display: flex;
