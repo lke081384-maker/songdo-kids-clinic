@@ -302,6 +302,7 @@ button, input, select, textarea { font: inherit; color: inherit; }
   font-size: clamp(1.0625rem, 1rem + .25vw, 1.1875rem);
   line-height: 1.8;
 }
+.hero-lead-first { display: block; margin-bottom: 1.8em; }
 
 .hero-actions {
   display: flex;
@@ -373,7 +374,7 @@ button, input, select, textarea { font: inherit; color: inherit; }
 
 .hero-facts {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   margin-top: 64px;
   border-top: 1px solid var(--line);
 }
@@ -608,7 +609,7 @@ button, input, select, textarea { font: inherit; color: inherit; }
 
 .staff {
   display: grid;
-  grid-template-columns: minmax(0, 1.65fr) minmax(0, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 20px;
   margin-top: 88px;
 }
@@ -626,6 +627,10 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .staff-card--aba { background: var(--ink); }
 .staff-card--aba h4 { color: var(--white); }
 .staff-card--aba p { color: #CFE3EE; }
+.staff-card--aba .staff-list dt { color: #8FD0E6; }
+.staff-card--aba .staff-list dd { color: #CFE3EE; }
+.staff-role { display: block; margin-top: 2px; font-size: .875rem; font-weight: 600; color: var(--ink-3); }
+.staff-card--aba .staff-role { color: #8FD0E6; }
 
 /* ---------- 클리닉 둘러보기: 남색 바탕 위 사진 ---------- */
 .tour { background: var(--ink-deep); color: #C9DDE9; }
@@ -812,7 +817,7 @@ button, input, select, textarea { font: inherit; color: inherit; }
 
 .session-facts {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: 1fr;
   margin-top: 12px;
   padding: 18px 6px;
   background: var(--white);
@@ -1121,6 +1126,9 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .fees-clinic p { margin-top: 12px; color: #CFE3EE; }
 .fees-clinic-actions { display: grid; gap: 8px; margin-top: 24px; }
 .fees-clinic-actions .btn { width: 100%; }
+.fees-clinic--solo { position: static; max-width: 720px; }
+.fees-clinic--solo .fees-clinic-actions { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media (max-width: 640px) { .fees-clinic--solo .fees-clinic-actions { grid-template-columns: 1fr; } }
 
 .fees-ped {
   padding: 32px;
