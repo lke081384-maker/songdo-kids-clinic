@@ -255,23 +255,20 @@ button, input, select, textarea { font: inherit; color: inherit; }
 
 .site-nav ul a { white-space: nowrap; }
 
-@media (min-width: 1400px) {
-  .nav-phone { display: inline-flex; }
-  .site-nav { gap: 18px; }
-  .site-nav ul { gap: 0; }
-  .site-nav ul a { padding: 8px 9px; }
-}
+/* 메뉴가 9개라 넓은 화면에서도 머리말 전화번호는 넣지 않음. 전화번호는 오른쪽 아래 빠른 문의 버튼에 보임 */
 
 /* 태블릿 가로 폭: 메뉴가 두 줄로 꺾이지 않게 신청 버튼은 오른쪽 아래 빠른 문의 버튼에 맡김 */
-@media (min-width: 901px) and (max-width: 1140px) {
+@media (min-width: 961px) and (max-width: 1220px) {
   .nav-cta { display: none; }
   .site-nav ul a { padding: 8px 8px; font-size: .9375rem; }
 }
 .brand { flex: none; }
 .brand-sub, .brand-name { white-space: nowrap; }
-@media (min-width: 901px) and (max-width: 1000px) {
+@media (min-width: 961px) and (max-width: 1000px) {
+  .header-inner { gap: 12px; }
+  .brand-sub { display: none; }
   .site-nav ul { gap: 0; }
-  .site-nav ul a { padding: 8px 6px; font-size: .875rem; }
+  .site-nav ul a { padding: 8px 5px; font-size: .8438rem; }
 }
 
 /* ---------- 첫 화면: 실제 공간 사진과 연락 버튼 ---------- */
@@ -1219,6 +1216,8 @@ button, input, select, textarea { font: inherit; color: inherit; }
   border-radius: var(--radius-l);
 }
 .clinic-card h3 { font-size: 1.25rem; font-weight: 800; }
+.clinic-card h3 a { color: inherit; text-decoration-color: var(--whale); text-decoration-thickness: 2px; }
+.clinic-card h3 a:hover { color: var(--sea); }
 .clinic-card-sub { margin-top: 4px; color: var(--ink-3); font-size: .9063rem; }
 .clinic-card dl { display: grid; margin-top: 16px; }
 .clinic-card dl div {
@@ -1390,7 +1389,7 @@ button, input, select, textarea { font: inherit; color: inherit; }
   .support-grid { padding: 48px 40px; gap: 36px; }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 960px) {
   :root { --header-h: 64px; --gutter: 20px; }
 
   /* 머리말: 접는 메뉴 */

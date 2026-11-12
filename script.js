@@ -149,7 +149,7 @@ function mailHref(email, subject, body) {
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape' && nav.classList.contains('is-open')) { setOpen(false); toggle.focus(); }
   });
-  window.matchMedia('(min-width: 901px)').addEventListener('change', e => { if (e.matches) setOpen(false); });
+  window.matchMedia('(min-width: 961px)').addEventListener('change', e => { if (e.matches) setOpen(false); });
 })();
 
 /* ---------- 설정값 반영 ---------- */
@@ -290,7 +290,7 @@ const selectedConcerns = new Set();
 (function tests() {
   const groups = $$('.test-group');
   if (!groups.length) return;
-  const narrow = window.matchMedia('(max-width: 900px)');
+  const narrow = window.matchMedia('(max-width: 960px)');
 
   const apply = () => {
     groups.forEach((group, i) => {
