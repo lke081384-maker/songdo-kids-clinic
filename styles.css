@@ -295,6 +295,17 @@ button, input, select, textarea { font: inherit; color: inherit; }
   letter-spacing: -0.045em;
 }
 
+/* h1 안에 들어간 클리닉 이름 줄 */
+.hero-kicker {
+  display: block;
+  margin-bottom: 14px;
+  color: var(--sea);
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0;
+}
+
 .hero-lead {
   max-width: 31em;
   margin-top: 24px;
