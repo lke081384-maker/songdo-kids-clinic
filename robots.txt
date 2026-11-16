@@ -34,4 +34,12 @@ User-agent: Google-Extended
 User-agent: Applebot-Extended
 Allow: /
 
+# 그 밖의 AI 검색·답변
+User-agent: DuckAssistBot
+User-agent: meta-externalagent
+User-agent: Amazonbot
+User-agent: MistralAI-User
+User-agent: CCBot
+Allow: /
+
 Sitemap: https://lke081384-maker.github.io/songdo-kids-clinic/sitemap.xml

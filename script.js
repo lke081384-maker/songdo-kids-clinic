@@ -342,6 +342,10 @@ document.addEventListener('click', e => {
 (function formHelpers() {
   if (!form) return;
 
+  // 신청서가 페이지 주소로 제출되면 이름·연락처가 주소창(?guardian=…)과 방문 기록에 남는다.
+  // 보내기는 아래 버튼(카카오톡·문자·메일)으로만 하므로 브라우저 기본 제출은 항상 막는다.
+  form.addEventListener('submit', e => e.preventDefault());
+
   // 연락처 자동 하이픈
   form.phone.addEventListener('input', () => { form.phone.value = formatPhone(form.phone.value); });
 

@@ -1710,3 +1710,223 @@ button, input, select, textarea { font: inherit; color: inherit; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
 }
+
+/* ==========================================================
+   안내 페이지 (치료·검사별 페이지)
+   seo.py가 만드는 language-therapy.html 등에서 쓴다.
+   ========================================================== */
+
+/* 첫 화면에서 안내 페이지로 가는 링크 */
+.more-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 32px;
+  color: var(--sea);
+  font-size: .9688rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+.more-link::after { content: "→"; transition: transform .15s ease; }
+.more-link:hover { text-decoration: underline; }
+.more-link:hover::after { transform: translateX(3px); }
+.section-more { margin-top: 28px; }
+.section-head .more-link { margin-top: 14px; }
+.program > .more-link { margin-top: 14px; align-self: flex-start; }
+.program--group .more-link,
+.support .more-link { color: #8FD0E6; }
+.program--group .more-link { margin-top: 10px; }
+.support .more-link { margin-top: 20px; }
+.concern-pick .section-more { margin-top: 20px; }
+
+/* 바닥글의 안내 페이지 목록 */
+.footer-pages {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px 32px;
+  padding-top: 32px;
+  border-top: 1px solid rgba(255, 255, 255, .14);
+}
+.footer-pages h3 { color: var(--white); font-size: .9375rem; }
+.footer-pages ul { display: flex; flex-wrap: wrap; gap: 4px 16px; margin-top: 10px; }
+.site-footer .footer-pages a { display: inline-block; padding: 3px 0; color: #BCD5E2; text-decoration: none; }
+.site-footer .footer-pages a:hover { color: var(--white); text-decoration: underline; }
+
+/* 머리 부분 */
+.sub-wrap { width: min(880px, 100% - var(--gutter) * 2); margin-inline: auto; }
+.sub-hero { padding: 28px 0 60px; background: var(--mist); }
+.crumbs { color: var(--ink-3); font-size: .875rem; }
+.crumbs ol { display: flex; flex-wrap: wrap; gap: 2px 8px; }
+.crumbs li + li::before { content: "›"; margin-right: 8px; color: var(--line-strong); }
+.crumbs a { color: var(--ink-2); text-decoration: none; }
+.crumbs a:hover { text-decoration: underline; }
+.sub-hero h1 {
+  margin-top: 36px;
+  font-size: clamp(2rem, 1.35rem + 2.8vw, 3.25rem);
+  line-height: 1.2;
+  letter-spacing: -0.04em;
+}
+.sub-kicker {
+  display: block;
+  margin-bottom: 12px;
+  color: var(--sea);
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0;
+}
+.sub-lead { max-width: 42em; margin-top: 22px; color: var(--ink); font-size: 1.125rem; }
+.sub-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 30px; }
+.sub-updated { margin-top: 22px; color: var(--ink-3); font-size: .875rem; }
+
+/* 본문 */
+.sub-main { padding: 72px 0 104px; }
+.sub-block + .sub-block { margin-top: 72px; }
+.sub-block h2 {
+  font-size: clamp(1.5rem, 1.25rem + 1vw, 2rem);
+  letter-spacing: -0.035em;
+}
+.sub-block h2 + * { margin-top: 20px; }
+.sub-block > p { max-width: 44em; color: var(--ink-2); }
+.sub-block > p + * { margin-top: 20px; }
+.sub-block h3 { margin-top: 44px; font-size: 1.25rem; }
+.sub-block h3 a { color: inherit; text-decoration: none; }
+.sub-block h3 a:hover { color: var(--sea); text-decoration: underline; }
+.sub-block h3 .count { margin-left: 6px; color: var(--ink-3); font-size: .875rem; font-weight: 600; letter-spacing: 0; }
+.sub-block h3 + p { margin-top: 6px; color: var(--ink-2); }
+.sub-block h3 + .data-table,
+.sub-block h3 + p + .data-table { margin-top: 16px; }
+.sub-block .sub-note { margin-top: 18px; color: var(--ink-3); font-size: .9375rem; }
+
+.facts { border-top: 2px solid var(--ink-deep); margin: 0; }
+.facts > div {
+  display: grid;
+  grid-template-columns: 9.5em minmax(0, 1fr);
+  gap: 16px;
+  padding: 15px 0;
+  border-bottom: 1px solid var(--line);
+}
+.facts dt { color: var(--sea); font-size: .9688rem; font-weight: 700; }
+.facts dd { margin: 0; color: var(--ink); }
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-top: 2px solid var(--ink-deep);
+  font-size: .9688rem;
+}
+.data-table th,
+.data-table td {
+  padding: 15px 16px 15px 0;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+}
+.data-table th:last-child,
+.data-table td:last-child { padding-right: 0; }
+.data-table thead th { color: var(--sea); font-size: .875rem; font-weight: 700; white-space: nowrap; }
+.data-table tbody th { width: 30%; color: var(--ink-deep); font-weight: 600; }
+.data-table tbody th strong { color: var(--sea); font-weight: 800; }
+.data-table td { color: var(--ink-2); }
+
+.check-list { display: grid; gap: 14px; }
+.check-list li { position: relative; padding-left: 26px; color: var(--ink); }
+.check-list li::before {
+  content: "";
+  position: absolute;
+  left: 4px; top: .68em;
+  width: 9px; height: 9px;
+  border-radius: 50%;
+  background: var(--whale);
+}
+.check-list strong { display: block; color: var(--ink-deep); }
+.check-list span { display: block; color: var(--ink-2); font-size: .9688rem; }
+
+.num-steps { display: grid; gap: 16px; counter-reset: sub-step; }
+.num-steps li { position: relative; padding-left: 46px; counter-increment: sub-step; }
+.num-steps li::before {
+  content: counter(sub-step);
+  position: absolute;
+  left: 0; top: 0;
+  display: grid; place-items: center;
+  width: 30px; height: 30px;
+  border-radius: 50%;
+  background: var(--mist-2);
+  color: var(--ink-deep);
+  font-size: .9375rem;
+  font-weight: 800;
+}
+.num-steps strong { display: block; color: var(--ink-deep); }
+.num-steps span { display: block; color: var(--ink-2); font-size: .9688rem; }
+
+.sub-photos { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.sub-photos figure { margin: 0; }
+.sub-photos img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: var(--radius-m); }
+.sub-photos figcaption { margin-top: 8px; color: var(--ink-2); font-size: .9063rem; }
+
+.sub-staff { display: grid; gap: 14px; }
+.sub-block .staff-card h3 { margin: 0 0 14px; font-size: 1.125rem; }
+
+.sub-page .faq-list summary { font-size: 1.0625rem; }
+
+.sub-cta {
+  margin-top: 80px;
+  padding: 40px;
+  background: var(--ink);
+  border-radius: var(--radius-l);
+  color: #CFE3EE;
+}
+.sub-cta h2 { color: var(--white); font-size: clamp(1.375rem, 1.2rem + .8vw, 1.75rem); }
+.sub-cta p { max-width: 40em; margin-top: 12px; }
+.sub-cta .sub-actions { margin-top: 24px; }
+
+.related { margin-top: 72px; }
+.related h2 { font-size: 1.25rem; }
+.related ul { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 10px; margin-top: 18px; }
+.related a {
+  display: block;
+  height: 100%;
+  padding: 16px 18px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-m);
+  color: var(--ink-deep);
+  font-weight: 700;
+  line-height: 1.45;
+  text-decoration: none;
+  transition: border-color .15s ease;
+}
+.related a:hover { border-color: var(--ink); }
+.related a span { display: block; margin-top: 4px; color: var(--ink-3); font-size: .8438rem; font-weight: 500; }
+
+@media (max-width: 960px) {
+  .footer-pages { grid-template-columns: 1fr; gap: 20px; }
+}
+
+@media (max-width: 640px) {
+  .sub-hero { padding: 20px 0 44px; }
+  .sub-hero h1 { margin-top: 26px; }
+  .sub-lead { font-size: 1.0625rem; }
+  .sub-actions .btn { flex: 1 1 100%; }
+  .sub-main { padding: 52px 0 72px; }
+  .sub-block + .sub-block { margin-top: 56px; }
+  .facts > div { grid-template-columns: 1fr; gap: 2px; }
+  .sub-photos { grid-template-columns: 1fr; }
+  .sub-cta { margin-top: 60px; padding: 28px 22px; }
+  .related ul { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+  /* 표: 좁은 화면에서는 줄마다 세로로 쌓고 칸 이름을 앞에 붙인다 */
+  .data-table thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+  .data-table tr { display: block; padding: 15px 0; border-bottom: 1px solid var(--line); }
+  .data-table th,
+  .data-table td { display: block; width: auto; padding: 0; border: 0; }
+  .data-table tbody th { width: auto; font-size: 1.0313rem; }
+  .data-table td { margin-top: 6px; }
+  .data-table td::before {
+    content: attr(data-label);
+    display: block;
+    color: var(--sea);
+    font-size: .8125rem;
+    font-weight: 700;
+  }
+}
