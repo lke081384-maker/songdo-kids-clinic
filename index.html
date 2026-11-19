@@ -37,7 +37,7 @@
   <!-- font:start -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" integrity="sha384-GIdEBaqGN9mNkDkMkzMHW8EKUqtpPIe/sLj1X7DIrnc9uPtLROJgmuDlh+3rBw0j" crossorigin="anonymous">
   <!-- font:end -->
-  <link rel="stylesheet" href="styles.css?v=20261116">
+  <link rel="stylesheet" href="styles.css?v=20261119">
   <!-- 아래 구조화 데이터는 seo.py가 만든다. 직접 고치지 않는다. -->
   <!-- clinic-schema:start -->
   <script type="application/ld+json">
@@ -234,7 +234,7 @@
         "name": "송도키즈 학습심리발달클리닉 | 인천 송도 언어치료·놀이치료·발달검사",
         "description": "인천 송도 송도키즈소아청소년과의원 부설 학습심리발달클리닉. 언어·인지·주의집중·정서 발달검사와 언어치료, 놀이치료, 감각통합, 인지·학습치료, ABA, 사회성 그룹을 안내합니다. 영유아검진 심화평가 정밀검사 가능. 상담 032-724-8175",
         "inLanguage": "ko",
-        "dateModified": "2026-11-16",
+        "dateModified": "2026-11-19",
         "isPartOf": {
           "@id": "https://lke081384-maker.github.io/songdo-kids-clinic/#website"
         },
@@ -263,6 +263,7 @@
           "https://lke081384-maker.github.io/songdo-kids-clinic/first-visit.html",
           "https://lke081384-maker.github.io/songdo-kids-clinic/about.html",
           "https://lke081384-maker.github.io/songdo-kids-clinic/location.html",
+          "https://lke081384-maker.github.io/songdo-kids-clinic/fees.html",
           "https://lke081384-maker.github.io/songdo-kids-clinic/faq.html"
         ]
       }
@@ -374,7 +375,7 @@
         "name": "비용은 얼마인가요?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "검사와 수업의 종류, 아이의 연령에 따라 다릅니다. 상담할 때 자세히 안내해 드립니다. 시기별로 진행하는 검사 이벤트는 카카오톡 채널 소식에 올립니다."
+          "text": "비급여 비용은 홈페이지의 비용 안내 표에서 확인하실 수 있습니다. 예를 들어 언어치료는 90,000원, ABA치료는 100,000원, 종합주의력검사(CAT)는 150,000원입니다(2026년 11월 19일 기준). 금액은 바뀔 수 있으니 정확한 비용은 상담할 때 확인해 주세요. 시기별로 진행하는 검사 이벤트는 카카오톡 채널 소식에 올립니다."
         }
       },
       {
@@ -1139,20 +1140,64 @@
     </div>
   </section>
 
-  <!-- 비용 안내: 발달센터(클리닉) 비급여 비용. 2026-11-13 소아청소년과 비급여 표를 뺌(클리닉 요청). 금액표를 받으면 fees-clinic 안에 넣으세요. -->
+  <!-- 비용 안내: 발달센터(클리닉) 비급여 비용. 2026-11-19 클리닉 문서 「센터 비급여 비용안내 최종 20261119」의 '최종본' 시트를 옮김.
+       금액을 고칠 때는 아래 표와 기준일(이 구역 첫 문단, pages_data.py의 FEES_DATE)을 고치고 python seo.py를 실행한다.
+       비용 안내 페이지(fees.html)와 안내 페이지의 비용 질문·답은 이 표에서 금액을 읽어 간다.
+       줄 모양(<tr><th scope="row">항목<span class="fees-time">시간</span></th><td>비용</td></tr>)을 지켜야 seo.py가 읽는다. -->
   <section class="section fees-section" id="fees" aria-labelledby="fees-title">
     <div class="container">
       <div class="section-head">
         <h2 id="fees-title">비용 안내</h2>
-        <p>금액은 바뀔 수 있으니 정확한 비용은 상담할 때 확인해 주세요.</p>
+        <p>2026년 11월 19일 기준 비급여 진료비용입니다. 금액은 바뀔 수 있으니 정확한 비용은 상담할 때 확인해 주세요.</p>
       </div>
 
-      <div class="fees-clinic fees-clinic--solo">
-        <h3>발달 검사·치료 비급여 비용</h3>
-        <p>검사와 수업의 종류, 아이의 연령에 따라 달라 상담할 때 자세히 안내해 드립니다.</p>
-        <div class="fees-clinic-actions">
-          <a class="btn btn-light" href="tel:032-724-8175"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg>032-724-8175</a>
-          <a class="btn btn-kakao" href="https://pf.kakao.com/_xjqXln/chat" target="_blank" rel="noopener"><svg class="icon icon-fill" aria-hidden="true"><use href="#i-kakao"/></svg>카카오톡으로 묻기</a>
+      <div class="fees-layout">
+        <div class="fees-clinic">
+          <h3>발달 검사·치료 비급여 비용</h3>
+          <p>아이에게 필요한 검사와 수업은 초기상담에서 함께 정합니다. 궁금한 점은 전화나 카카오톡으로 편하게 물어보세요.</p>
+          <div class="fees-clinic-actions">
+            <a class="btn btn-light" href="tel:032-724-8175"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg>032-724-8175</a>
+            <a class="btn btn-kakao" href="https://pf.kakao.com/_xjqXln/chat" target="_blank" rel="noopener"><svg class="icon icon-fill" aria-hidden="true"><use href="#i-kakao"/></svg>카카오톡으로 묻기</a>
+          </div>
+        </div>
+
+        <div class="fees-card">
+          <details class="fees" id="fees-therapy" open>
+            <summary>치료</summary>
+            <div class="fees-body">
+              <table>
+                <caption class="sr-only">치료 비급여 비용</caption>
+                <thead class="sr-only"><tr><th scope="col">항목과 시간</th><th scope="col">비용</th></tr></thead>
+                <tbody>
+                  <tr><th scope="row">언어치료<span class="fees-time">40분 (5분 상담)</span></th><td>90,000원</td></tr>
+                  <tr><th scope="row">신경발달중재치료<span class="fees-time">40분 (5분 상담)</span></th><td>90,000원</td></tr>
+                  <tr><th scope="row">토닥언어치료<span class="fees-time">40분 (5분 상담)</span></th><td>180,000원</td></tr>
+                  <tr><th scope="row">토닥감통치료<span class="fees-time">40분 (5분 상담)</span></th><td>180,000원</td></tr>
+                  <tr><th scope="row">ABA치료<span class="fees-time">40분 (5분 상담)</span></th><td>100,000원</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </details>
+          <details class="fees" id="fees-test" open>
+            <summary>검사</summary>
+            <div class="fees-body">
+              <table>
+                <caption class="sr-only">검사 비급여 비용</caption>
+                <thead class="sr-only"><tr><th scope="col">항목과 시간</th><th scope="col">비용</th></tr></thead>
+                <tbody>
+                  <tr><th scope="row">언어전반발달검사 (PRES, REVT, LSSC, KM-B CDI 등)<span class="fees-time">검사마다 다름</span></th><td>250,000원</td></tr>
+                  <tr><th scope="row">영유아발달검사 (한국판 덴버발달검사)<span class="fees-time">40분</span></th><td>250,000원</td></tr>
+                  <tr><th scope="row">TCI·JTCI<span class="fees-time">40분</span></th><td>150,000원</td></tr>
+                  <tr><th scope="row">PAT-2<span class="fees-time">30분</span></th><td>150,000원</td></tr>
+                  <tr><th scope="row">풀배터리검사 (I~II)<span class="fees-time">검사마다 다름</span></th><td>45만~50만 원</td></tr>
+                  <tr><th scope="row">정서검사 A~C<span class="fees-time">검사마다 다름</span></th><td>30만~40만 원</td></tr>
+                  <tr><th scope="row">부모양육스트레스검사<span class="fees-time">20분</span></th><td>50,000원</td></tr>
+                  <tr><th scope="row">종합주의력검사 (CAT)<span class="fees-time">40분</span></th><td>150,000원</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </details>
+          <p class="fees-note">항목별 설명과 자주 묻는 질문은 <a href="fees.html">비급여 비용 안내</a>에서 보실 수 있습니다.</p>
         </div>
       </div>
     </div>
@@ -1236,7 +1281,7 @@
         <details>
           <summary>비용은 얼마인가요?</summary>
           <div class="faq-body">
-            <p>검사와 수업의 종류, 아이의 연령에 따라 다릅니다. 상담할 때 자세히 안내해 드립니다. 시기별로 진행하는 검사 이벤트는 카카오톡 채널 소식에 올립니다.</p>
+            <p>비급여 비용은 홈페이지의 <a href="#fees">비용 안내</a> 표에서 확인하실 수 있습니다. 예를 들어 언어치료는 90,000원, ABA치료는 100,000원, 종합주의력검사(CAT)는 150,000원입니다(2026년 11월 19일 기준). 금액은 바뀔 수 있으니 정확한 비용은 상담할 때 확인해 주세요. 시기별로 진행하는 검사 이벤트는 카카오톡 채널 소식에 올립니다.</p>
           </div>
         </details>
         <details>
@@ -1399,7 +1444,7 @@
       <h2 class="sr-only">안내 페이지</h2>
       <div><h3>치료·프로그램</h3><ul><li><a href="programs.html">치료·프로그램 전체</a></li><li><a href="language-therapy.html">언어치료</a></li><li><a href="play-therapy.html">놀이치료</a></li><li><a href="sensory-integration.html">감각통합치료</a></li><li><a href="cognitive-therapy.html">인지치료</a></li><li><a href="learning-therapy.html">학습치료</a></li><li><a href="aba.html">ABA 응용행동분석</a></li><li><a href="social-group.html">사회성 그룹</a></li></ul></div>
       <div><h3>검사</h3><ul><li><a href="tests.html">검사 전체</a></li><li><a href="language-test.html">언어·의사소통 검사</a></li><li><a href="intelligence-test.html">웩슬러 지능검사</a></li><li><a href="attention-test.html">주의력검사(CAT)</a></li><li><a href="developmental-test.html">발달검사</a></li><li><a href="emotion-test.html">기질·정서 검사</a></li><li><a href="parent-child-test.html">부모-자녀 관계 평가</a></li><li><a href="checkup.html">영유아검진 정밀검사</a></li></ul></div>
-      <div><h3>안내</h3><ul><li><a href="concerns.html">고민별 안내</a></li><li><a href="first-visit.html">이용 절차</a></li><li><a href="about.html">클리닉 소개</a></li><li><a href="location.html">오시는 길</a></li><li><a href="faq.html">자주 묻는 질문</a></li></ul></div>
+      <div><h3>안내</h3><ul><li><a href="concerns.html">고민별 안내</a></li><li><a href="first-visit.html">이용 절차</a></li><li><a href="about.html">클리닉 소개</a></li><li><a href="location.html">오시는 길</a></li><li><a href="fees.html">비용 안내</a></li><li><a href="faq.html">자주 묻는 질문</a></li></ul></div>
     </nav>
   <!-- footer-pages:end -->
   </div>

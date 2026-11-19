@@ -1141,7 +1141,7 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .fees-clinic--solo .fees-clinic-actions { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 @media (max-width: 640px) { .fees-clinic--solo .fees-clinic-actions { grid-template-columns: 1fr; } }
 
-.fees-ped {
+.fees-ped, .fees-card {
   padding: 32px;
   background: var(--white);
   border-radius: var(--radius-l);
@@ -1181,6 +1181,13 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .fees tr:first-child th, .fees tr:first-child td { border-top: 0; }
 .fees th { padding-right: 16px; color: var(--ink-2); font-weight: 600; }
 .fees td { color: var(--ink-deep); font-weight: 700; text-align: right; font-variant-numeric: tabular-nums; }
+/* 발달클리닉 비급여 비용표 (2026-11-19) */
+.fees-card { padding-top: 14px; }
+.fees-card .fees:first-of-type { border-top: 0; }
+.fees-card .fees td { white-space: nowrap; }
+.fees-time { display: block; margin-top: 2px; color: var(--ink-3); font-size: .875rem; font-weight: 500; }
+.fees-note { margin-top: 16px; color: var(--ink-3); font-size: .9063rem; }
+.fees-note a { color: var(--sea); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
 
 /* ---------- 자주 묻는 질문 ---------- */
 .faq-grid {
@@ -1677,12 +1684,21 @@ button, input, select, textarea { font: inherit; color: inherit; }
 
   .channel--phone .channel-value { font-size: 1.5rem; }
   .consult-form { padding: 26px 18px; border-radius: var(--radius-m); }
-  .fees-clinic, .fees-ped { padding: 24px 18px; border-radius: var(--radius-m); }
+  .fees-clinic, .fees-ped, .fees-card { padding: 24px 18px; border-radius: var(--radius-m); }
+  .fees-card { padding-top: 8px; }
   .fees table, .fees tbody, .fees tr { display: block; }
   .fees tr { padding: 10px 0; border-top: 1px solid var(--mist-2); }
   .fees tr:first-child { border-top: 0; }
   .fees th, .fees td { display: block; padding: 0; border: 0; text-align: left; }
   .fees td { margin-top: 2px; }
+  /* 비급여 비용표는 좁은 화면에서도 항목 왼쪽·금액 오른쪽으로 둔다 */
+  .fees-card .fees table { display: table; }
+  .fees-card .fees tbody { display: table-row-group; }
+  .fees-card .fees tr { display: table-row; padding: 0; border: 0; }
+  .fees-card .fees th, .fees-card .fees td { display: table-cell; padding: 10px 0; border-top: 1px solid var(--mist-2); }
+  .fees-card .fees th { padding-right: 12px; }
+  .fees-card .fees td { margin-top: 0; text-align: right; }
+  .fees-card .fees tr:first-child th, .fees-card .fees tr:first-child td { border-top: 0; }
   .field-row { grid-template-columns: 1fr; gap: 0; }
   .send-buttons { grid-template-columns: 1fr; }
 
@@ -1930,3 +1946,6 @@ button, input, select, textarea { font: inherit; color: inherit; }
     font-weight: 700;
   }
 }
+
+/* 안내 페이지 아래 상담 안내 글 안의 링크 (2026-11-19) */
+.sub-cta p a { color: inherit; font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
