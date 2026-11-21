@@ -37,7 +37,7 @@
   <!-- font:start -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" integrity="sha384-GIdEBaqGN9mNkDkMkzMHW8EKUqtpPIe/sLj1X7DIrnc9uPtLROJgmuDlh+3rBw0j" crossorigin="anonymous">
   <!-- font:end -->
-  <link rel="stylesheet" href="styles.css?v=20261121">
+  <link rel="stylesheet" href="styles.css?v=20261122">
   <!-- 아래 구조화 데이터는 seo.py가 만든다. 직접 고치지 않는다. -->
   <!-- clinic-schema:start -->
   <script type="application/ld+json">
@@ -234,7 +234,7 @@
         "name": "송도키즈 학습심리발달클리닉 | 인천 송도 언어치료·놀이치료·발달검사",
         "description": "인천 송도 송도키즈소아청소년과의원 부설 학습심리발달클리닉. 언어·인지·주의집중·정서 발달검사와 언어치료, 놀이치료, 감각통합, 인지·학습치료, ABA, 사회성 그룹을 안내합니다. 영유아검진 심화평가 정밀검사 가능. 상담 032-724-8175",
         "inLanguage": "ko",
-        "dateModified": "2026-11-21",
+        "dateModified": "2026-11-22",
         "isPartOf": {
           "@id": "https://lke081384-maker.github.io/songdo-kids-clinic/#website"
         },
@@ -1141,10 +1141,11 @@
   </section>
 
   <!-- 비용 안내: 발달센터(클리닉) 비급여 비용. 2026-11-19 클리닉 문서 「센터 비급여 비용안내 최종 20261119」의 '최종본' 시트를 옮김.
-       2026-11-21 표 모양을 바꿈(묶음별 표를 두 칸으로 나란히, 아래에 안내 상자).
+       2026-11-22 한 줄에 항목 하나(항목 | 비용)로 정리. 시간은 항목 이름 옆 옅은 글씨(fee-time)이고,
+       시간이 검사마다 다른 항목은 fee-time을 빼고 표 아래 fee-note 줄에 이름을 적는다.
        금액을 고칠 때는 아래 표와 기준일(이 구역 첫 문단과 안내 상자, pages_data.py의 FEES_DATE)을 고치고 python seo.py를 실행한다.
        비용 안내 페이지(fees.html)와 안내 페이지의 비용 질문·답은 이 표에서 금액을 읽어 간다.
-       줄 모양(<tr><th scope="row">항목</th><td class="fees-time">시간</td><td class="r">비용</td></tr>)을 지켜야 seo.py가 읽는다. -->
+       줄 모양(<tr><th scope="row">항목 <span class="fee-time">시간</span></th><td class="r">비용</td></tr>)을 지켜야 seo.py가 읽는다. -->
   <section class="section fees-section" id="fees" aria-labelledby="fees-title">
     <div class="container">
       <div class="section-head">
@@ -1157,13 +1158,13 @@
           <h3>치료</h3>
           <table class="fee-tbl">
             <caption class="sr-only">치료 비급여 비용</caption>
-            <thead><tr><th scope="col">항목</th><th scope="col">시간</th><th scope="col" class="r">비용</th></tr></thead>
+            <thead><tr><th scope="col">항목</th><th scope="col" class="r">비용</th></tr></thead>
             <tbody>
-              <tr><th scope="row">언어치료</th><td class="fees-time">40분 (5분 상담)</td><td class="r">90,000원</td></tr>
-              <tr><th scope="row">신경발달중재치료</th><td class="fees-time">40분 (5분 상담)</td><td class="r">90,000원</td></tr>
-              <tr><th scope="row">토닥언어치료</th><td class="fees-time">40분 (5분 상담)</td><td class="r">180,000원</td></tr>
-              <tr><th scope="row">토닥감통치료</th><td class="fees-time">40분 (5분 상담)</td><td class="r">180,000원</td></tr>
-              <tr><th scope="row">ABA치료</th><td class="fees-time">40분 (5분 상담)</td><td class="r">100,000원</td></tr>
+              <tr><th scope="row">언어치료 <span class="fee-time">40분 (5분 상담)</span></th><td class="r">90,000원</td></tr>
+              <tr><th scope="row">신경발달중재치료 <span class="fee-time">40분 (5분 상담)</span></th><td class="r">90,000원</td></tr>
+              <tr><th scope="row">토닥언어치료 <span class="fee-time">40분 (5분 상담)</span></th><td class="r">180,000원</td></tr>
+              <tr><th scope="row">토닥감통치료 <span class="fee-time">40분 (5분 상담)</span></th><td class="r">180,000원</td></tr>
+              <tr><th scope="row">ABA치료 <span class="fee-time">40분 (5분 상담)</span></th><td class="r">100,000원</td></tr>
             </tbody>
           </table>
         </div>
@@ -1171,18 +1172,19 @@
           <h3>검사</h3>
           <table class="fee-tbl">
             <caption class="sr-only">검사 비급여 비용</caption>
-            <thead><tr><th scope="col">항목</th><th scope="col">시간</th><th scope="col" class="r">비용</th></tr></thead>
+            <thead><tr><th scope="col">항목</th><th scope="col" class="r">비용</th></tr></thead>
             <tbody>
-              <tr><th scope="row">언어전반발달검사 (PRES, REVT, LSSC, KM-B CDI 등)</th><td class="fees-time">검사마다 다름</td><td class="r">250,000원</td></tr>
-              <tr><th scope="row">영유아발달검사 (한국판 덴버발달검사)</th><td class="fees-time">40분</td><td class="r">250,000원</td></tr>
-              <tr><th scope="row">TCI·JTCI</th><td class="fees-time">40분</td><td class="r">150,000원</td></tr>
-              <tr><th scope="row">PAT-2</th><td class="fees-time">30분</td><td class="r">150,000원</td></tr>
-              <tr><th scope="row">풀배터리검사 (I~II)</th><td class="fees-time">검사마다 다름</td><td class="r">45만~50만 원</td></tr>
-              <tr><th scope="row">정서검사 A~C</th><td class="fees-time">검사마다 다름</td><td class="r">30만~40만 원</td></tr>
-              <tr><th scope="row">부모양육스트레스검사</th><td class="fees-time">20분</td><td class="r">50,000원</td></tr>
-              <tr><th scope="row">종합주의력검사 (CAT)</th><td class="fees-time">40분</td><td class="r">150,000원</td></tr>
+              <tr><th scope="row">언어전반발달검사 (PRES, REVT, LSSC, KM-B CDI 등)</th><td class="r">250,000원</td></tr>
+              <tr><th scope="row">영유아발달검사 (한국판 덴버발달검사) <span class="fee-time">40분</span></th><td class="r">250,000원</td></tr>
+              <tr><th scope="row">TCI·JTCI <span class="fee-time">40분</span></th><td class="r">150,000원</td></tr>
+              <tr><th scope="row">PAT-2 <span class="fee-time">30분</span></th><td class="r">150,000원</td></tr>
+              <tr><th scope="row">풀배터리검사 (I~II)</th><td class="r">45만~50만 원</td></tr>
+              <tr><th scope="row">정서검사 A~C</th><td class="r">30만~40만 원</td></tr>
+              <tr><th scope="row">부모양육스트레스검사 <span class="fee-time">20분</span></th><td class="r">50,000원</td></tr>
+              <tr><th scope="row">종합주의력검사 (CAT) <span class="fee-time">40분</span></th><td class="r">150,000원</td></tr>
             </tbody>
           </table>
+          <p class="fee-note">검사에 따라 시간이 다른 항목: 언어전반발달검사, 풀배터리검사, 정서검사 A~C</p>
         </div>
       </div>
 

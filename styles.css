@@ -1118,7 +1118,7 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .send-hint { margin-top: 12px; color: var(--ink-3); font-size: .9063rem; }
 
 /* ---------- 비용 안내 ---------- */
-/* 2026-11-21: 묶음별 표를 두 칸으로 나란히 두고, 머리줄 아래 진한 선·줄마다 옅은 선, 아래에 안내 상자 */
+/* 2026-11-22: 한 줄에 항목 하나(항목 | 비용). 묶음별 표를 두 칸으로 나란히, 머리줄 아래 진한 선·줄마다 옅은 선, 아래에 안내 상자 */
 .fees-section { background: var(--white); }
 .fee-grid {
   display: grid;
@@ -1126,9 +1126,9 @@ button, input, select, textarea { font: inherit; color: inherit; }
   gap: 48px 64px;
   align-items: start;
 }
-.fee h3,
-.sub-block h3.fee-title { color: var(--ink-deep); font-size: 1.25rem; font-weight: 800; letter-spacing: -0.03em; }
-.fee h3 { margin-bottom: 8px; }
+/* 칸이 좁아 항목 이름이 두 줄로 넘어가기 전에 한 칸으로 바꾼다 */
+@media (max-width: 1139px) { .fee-grid { grid-template-columns: 1fr; } }
+.fee h3 { margin-bottom: 8px; color: var(--ink-deep); font-size: 1.25rem; font-weight: 800; letter-spacing: -0.03em; }
 .fee-tbl { width: 100%; border-collapse: collapse; font-size: .9375rem; }
 .fee-tbl th,
 .fee-tbl td { padding: 10px 16px; border-bottom: 1px solid var(--line); vertical-align: top; text-align: left; }
@@ -1140,9 +1140,9 @@ button, input, select, textarea { font: inherit; color: inherit; }
   white-space: nowrap;
 }
 .fee-tbl tbody th { color: var(--ink-deep); font-weight: 500; }
-.fee-tbl td { color: var(--ink-2); }
-.fee-tbl .fees-time { white-space: nowrap; }
+.fee-time { margin-left: 6px; color: var(--ink-3); font-size: .875rem; font-weight: 400; white-space: nowrap; }
 .fee-tbl .r {
+  width: 1%;
   color: var(--ink-deep);
   font-weight: 700;
   text-align: right;
@@ -1150,6 +1150,7 @@ button, input, select, textarea { font: inherit; color: inherit; }
   font-variant-numeric: tabular-nums;
 }
 .fee-tbl thead .r { color: var(--ink-3); font-weight: 600; }
+.fee-note { margin-top: 10px; color: var(--ink-3); font-size: .875rem; }
 .fee-notes {
   margin-top: 40px;
   padding: 18px 24px;
@@ -1160,7 +1161,6 @@ button, input, select, textarea { font: inherit; color: inherit; }
 }
 .fee-notes p + p { margin-top: 6px; }
 .fee-notes a { color: var(--sea); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
-.sub-block .fee-grid { margin-top: 20px; }
 .sub-block .fee-notes { margin-top: 28px; }
 
 /* ---------- 자주 묻는 질문 ---------- */
@@ -1528,7 +1528,6 @@ button, input, select, textarea { font: inherit; color: inherit; }
   .concern-empty { min-height: 160px; }
   .concern-jump:not([hidden]) { display: inline-flex; margin-top: 20px; }
   .channels { position: static; }
-  .fee-grid { grid-template-columns: 1fr; }
 
   .tour-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: 42vw; gap: 8px; }
 
@@ -1657,11 +1656,11 @@ button, input, select, textarea { font: inherit; color: inherit; }
 
   .channel--phone .channel-value { font-size: 1.5rem; }
   .consult-form { padding: 26px 18px; border-radius: var(--radius-m); }
+  .fee-tbl { font-size: .875rem; }
   .fee-tbl th,
-  .fee-tbl td { padding: 10px 6px; }
-  .fee-tbl th:first-child { padding-left: 0; }
-  .fee-tbl .r { padding-right: 0; }
-  .fee-tbl .fees-time { white-space: normal; }
+  .fee-tbl td { padding: 10px 0; }
+  .fee-tbl .r { padding-left: 8px; }
+  .fee-time { margin-left: 4px; font-size: .8125rem; }
   .fee-notes { padding: 16px 18px; }
   .field-row { grid-template-columns: 1fr; gap: 0; }
   .send-buttons { grid-template-columns: 1fr; }
